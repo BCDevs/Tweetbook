@@ -28,7 +28,7 @@ function initTweets() {
     tweetBook.getTweetsLength((err, maxTweets) => {
         let sectionContent = ''
         maxTweets = maxTweets.toNumber()
-        for(let i = maxtweets-1; i=0; i--) {
+        for(let i = maxTweets-1; i=0; i--) {
             tweetBook.allTweets(i, (err, message) => {
                 sectionContent += `<div class="tweets-box">
                     <div>${message[1]} says:</div>
