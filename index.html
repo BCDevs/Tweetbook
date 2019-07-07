@@ -5,11 +5,25 @@
   <link rel="stylesheet" href="index.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="dark">
+<body>
+	<div id="total" style="position: relative;">
   <center><h1>TweetBook</h1></center>
-<div  id ="main">
-     <div style="text-align: center;">
-    <div id= "left" style="text-align: center;">
+  <div id= "right" style="text-align: center; overflow-y: scroll;">
+ <button id="messages" onclick="initMessages()" class="notification">Messages<i class="fa fa-envelope"></i></button>
+ <span  id="badge" class="badge">0</span>
+</br>
+<div id="section">
+                <div id="allMessages">
+                </div>
+                 <input type="text" id="addressTo" style="float: left;" placeholder="Enter Recipient Address..">
+                 <div style="text-align: center;">
+               <textarea id="messageContent" rows="3" placeholder="Type Your Message.."></textarea>
+               </br>
+               <button id="sendMessage" style="width:36px;"><i class="fa fa-location-arrow"></i></button>
+              </div>
+  </div>
+</div>
+  <div id= "left" style="text-align: center;">
 <button id="myAccount" onclick="initMyProfile()">My Account<i class="fa fa-user-circle"></i></button>
 <button id="modal-btn" style="margin-left: 20px;">SignUp</a><i class="fa fa-user-plus"></i></button>
 <div class="modal">
@@ -52,38 +66,28 @@
 <div id="profileContent"></div>
 </div>
 </div>
-<div id= "right" style="text-align: center;">
- <button id="messages" onclick="initMessages()" class="notification">Messages<i class="fa fa-envelope"></i></button>
- <span  id="badge" class="badge">0</span>
-</br>
-<div id="section">
-                <div id="allMessages">
-                </div>
-                 <input type="text" id="addressTo" style="float: left;" placeholder="Enter Recipient Address..">
-                 <div style="text-align: center;">
-               <textarea id="messageContent" rows="3" placeholder="Type Your Message.."></textarea>
-               </br>
-               <button id="sendMessage" style="width:36px;"><i class="fa fa-location-arrow"></i></button>
-              </div>
-  </div>
-</div>
+
+<div  id ="main" style="overflow-y:scroll;">
+     <div style="text-align: center;">
 <div style="text-align: center; margin:1px;">
 <div style="text-align: center;">
-<input type="text"  id="searchTitle" class="example" placeholder="Search Tweets.." name="search2" style="margin:auto; width:220px;">
+<input type="text"  id="searchTitle" class="example" placeholder="Search Tweets.." name="search2" style="margin:auto; width:60%;">
 <button onclick="searchTweets()" style="width:60px"><i class="fa fa-search"></i></button>
 <button id="initTweets" onclick="initTweets()" style="width:60px"><i class="fa fa-refresh"></i></button>
 <div id="searchTweets"></div>
 </div>
 <div style="text-align: center;">
-<input type="text" id="tweetTitle" placeholder="Enter Your Title" required />
-<textarea type="text" style="width:30%;" rows="4" id="content" placeholder="What's On Your Mind?" required /></textarea>  
+<input type="text" id="tweetTitle" style="float:left;" placeholder="Enter Your Title" required />
+<textarea type="text" style="width:90%;" rows="4" id="content" placeholder="What's On Your Mind?" required /></textarea>  
 <div style="text-align: center;">
+</br>
 <button id="addTweet" style="width:90px">Add Tweet</button>
 </br>
 <div style="text-align: center;">
  <div id="allTweets"></div>
 </div>
  </div>
+</div>
 </div>
 </div>
 </div>
@@ -105,20 +109,11 @@ window.onclick = function(e){
   }
 }
 </script>
-<script>
-document.addEventListener('DOMContentLoaded', (event) => {
-  ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')
-})
-</script>
 <script src="web3.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src ="index.js"></script>
 </body>
 <footer style="text-align: right;">
   <h6>&copy Salman Dabbakuti </h6>
-  <p>
-  <a style="cursor: pointer" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'bright' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
-    title="Switch to light or dark theme">🌓 Light|dark</a>
-</p>
 </footer>
 </html>
