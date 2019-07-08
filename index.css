@@ -4,6 +4,14 @@ h3, h2, h4{
     color: green;
     text-align: center;
 }
+html { 
+  background: url(daa.jpg) no-repeat center center fixed;
+  font-family: 'Courgette', cursive;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
  .example, #tweetTitle{
   padding: 6px;
   font-size: 17px;
