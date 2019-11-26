@@ -81,7 +81,7 @@ button:hover {
 }
 #main{
        width: 30vw;
-       height: 100vh;
+       height: 100%;
        margin: 0 auto;
        border: 2px white solid;
         background-color: rgb(4, 166, 255);
